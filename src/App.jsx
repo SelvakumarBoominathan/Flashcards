@@ -13,6 +13,8 @@ function App() {
 
   const [step, setStep] = useState(1);
 
+  const [isOpen, setIsopen] = useState(true);
+
   function handlePrevious(){
 
     if (step>1){
@@ -29,8 +31,11 @@ function App() {
   }
 
 
-
   return (
+    <>
+      <button className='close' onClick={()=> setIsopen(!isOpen)}> &times;</button>
+      {isOpen &&(
+      
     <div className='steps'>
       <div className='numbers'>
           <div className={step >=1 ? 'active': ""}>1</div>
@@ -46,6 +51,8 @@ function App() {
       </div>
 
     </div>
+
+   ) }</>
 
   )}
 
